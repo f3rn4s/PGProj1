@@ -56,7 +56,6 @@ int main()
 
 	//Resultados
 
-	printf("Perimetro: %2f\n",perimetro);
 	printf("Perimetro: %.2f\n",perimetro);
 
 	return 0;
