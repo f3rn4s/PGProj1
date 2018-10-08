@@ -42,7 +42,7 @@ int main()
 		vald2 = 0;
 		printf("insira a data de atual: ");
 		scanf("%d%d%d", &dia2, &mes2, &ano2);
-		if(ano2<1900 || ano2>2018)
+		if(ano2<1900 || ano2>2018) // validação do ano
 		{
 			printf("apenas anos entre 1900 e 2018\n");
 			vald2 = 1;
@@ -53,7 +53,7 @@ int main()
 			vald1 = 1;
 		}	
 		
-		if(mes2%2)
+		if(mes2%2) //validação dos meses pares
 			diasmes2 = 31;
 		else
 			diasmes2 = 30;
@@ -62,29 +62,45 @@ int main()
 		else if(mes2 == 2)
 			diasmes2 = 28;
 			
-		if(dia2<1 || dia2>diasmes2)
+		if(dia2<1 || dia2>diasmes2)// validação dos dias
 		{
 			printf("no %d mes há apenas entre 1 a %d dias\n", mes2, diasmes2);
 			vald2 = 1;
 		}
 	}while(vald2);
 	
+	//calculo da diferença
 	anof = ano2 - ano1;
 	mesf = mes2 - mes1;
 	diaf = dia2 - dia1;
 	
-	// para datas proximas, subtrai-se 1 ao mes/ano e
-	// subtrai-se o valor negativo
-	if(diaf<0)
-	{ 
-		mesf--;
-		diaf = diasmes1 + diaf;
-	}
+	// caso seja dia de aniversario
+	if(mesf == 0 && diaf == 0)
+		printf("\nMuitos parabens\n");
+		
+	// para meses negativos, subtrai-se 1 ao mes/ano e
 	if(mesf<0)
 	{
 		anof--;
 		mesf += 12 + mesf;
 	}	
+	
+	// para dias negativos
+	if(diaf<0)
+	{ 
+		if(mesf == 0) 
+		{
+			mesf = 11;
+			diaf = diasmes1 + diaf;
+		}
+		else
+		{
+			mesf--;
+			diaf = diasmes1 + diaf;
+		}
+	}
+	
+	
 	printf("tem %d anos, %d meses e %d dias", anof, mesf, diaf);
 	
 	return 0;
