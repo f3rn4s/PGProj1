@@ -3,7 +3,7 @@
 int main()
 {
 	int dia1, dia2, mes1, mes2, ano1, ano2, vald1, vald2, 
-	diasmes, diaf, mesf, anof;
+	diasmes1, diasmes2, diaf, mesf, anof;
 		
 	do //entrada e validação do ano de nascimento
 	{
@@ -22,17 +22,17 @@ int main()
 		}	
 		
 		if(mes1%2) // meses pares têm 31 dias
-			diasmes = 31;
+			diasmes1 = 31;
 		else
-			diasmes = 30; // meses impares têm 30 dias
+			diasmes1 = 30; // meses impares têm 30 dias
 		if(mes1 == 2 && (ano1%4 || ano1 == 1900 || ano1 == 2000)) 
-			diasmes = 29;
+			diasmes1 = 29;
 		else if(mes1 == 2)
-			diasmes = 28;
+			diasmes1 = 28;
 			
-		if(dia1<1 || dia1>diasmes) // validação do meses
+		if(dia1<1 || dia1>diasmes1) // validação do meses
 		{
-			printf("no %d mes há apenas entre 1 a %d dias\n", mes1, diasmes);
+			printf("no %d mes há apenas entre 1 a %d dias\n", mes1, diasmes1);
 			vald1 = 1;
 		}
 	}while(vald1);
@@ -54,17 +54,17 @@ int main()
 		}	
 		
 		if(mes2%2)
-			diasmes = 31;
+			diasmes2 = 31;
 		else
-			diasmes = 30;
+			diasmes2 = 30;
 		if(mes2 == 2 && (ano2%4 || ano2 == 1900 || ano2 == 2000)) 
-			diasmes = 29;
+			diasmes2 = 29;
 		else if(mes2 == 2)
-			diasmes = 28;
+			diasmes2 = 28;
 			
-		if(dia2<1 || dia2>diasmes)
+		if(dia2<1 || dia2>diasmes2)
 		{
-			printf("no %d mes há apenas entre 1 a %d dias\n", mes2, diasmes);
+			printf("no %d mes há apenas entre 1 a %d dias\n", mes2, diasmes2);
 			vald2 = 1;
 		}
 	}while(vald2);
@@ -78,12 +78,12 @@ int main()
 	if(diaf<0)
 	{ 
 		mesf--;
-		diaf += diaf;
+		diaf = diasmes1 + diaf;
 	}
 	if(mesf<0)
 	{
 		anof--;
-		mesf += mesf;
+		mesf += 12 + mesf;
 	}	
 	printf("tem %d anos, %d meses e %d dias", anof, mesf, diaf);
 	
