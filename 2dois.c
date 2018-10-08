@@ -75,9 +75,10 @@ int main()
 	diaf = dia2 - dia1;
 	
 	// caso seja dia de aniversario
-	if(mesf == 0 && diaf == 0)
-		printf("\nMuitos parabens\n");
-		
+	if(mesf == 0 && diaf == 0){
+		printf("Muitos parabens!!!!\n");
+		printf("Tem %d anos, %d meses e %d dias", anof, mesf, diaf);
+		}
 	// para meses negativos, subtrai-se 1 ao mes/ano e
 	if(mesf<0)
 	{
@@ -89,19 +90,19 @@ int main()
 	if(diaf<0)
 	{ 
 		if(mesf == 0) 
-		{
+		{	
+			anof--;
 			mesf = 11;
 			diaf = diasmes1 + diaf;
+			printf("tem %d anos, %d meses e %d dias", anof, mesf, diaf);
 		}
 		else
 		{
 			mesf--;
 			diaf = diasmes1 + diaf;
+			printf("tem %d anos, %d meses e %d dias", anof, mesf, diaf);
 		}
 	}
-	
-	
-	printf("tem %d anos, %d meses e %d dias", anof, mesf, diaf);
 	
 	return 0;
 	
