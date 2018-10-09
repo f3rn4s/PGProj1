@@ -17,7 +17,7 @@ int main()
 {
 	//Declaração de variáveis
 
-	float pontoAX = 0;
+	float pontoAX;
 	float pontoAY = 0;
 	float pontoBX = 0;
 	float pontoBY = 0;
