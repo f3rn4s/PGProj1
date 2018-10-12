@@ -11,20 +11,27 @@ int main()
 {
     
     //
-    int n=0;
-    int k = 0;
+    int n = 0;
+    int k = 1;
     double pi = 0.0;
+
+    printf("Insira o numero de termos (minimo 20 e maximo 100):");
+    scanf("%d", &n);
 
     for (int i = 0; i < n; i++, k++)
     {
+        printf("k= %d\n", k);
+        printf("i= %d\n", i );
         if ( k % 2 == 1)
         {
-            pi += (double)4*(1/((2*k)-1));
+            pi += 4.0*(1.0/((2.0*k)-1.0));
         }
         else
         {
-            pi += (double)4*(-1/((2*k)-1));
+            pi += 4.0*(-1.0/((2.0*k)-1.0));
         }
+        printf("pi= %lf\n", pi);
     }
+    printf("Pi = %lf \n", pi);
     return 0;
 }
