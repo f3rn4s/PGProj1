@@ -10,18 +10,31 @@ Nota: na resolução desta questão não pode usar funções da biblioteca de C*
 int main()
 {
     
-    //
+    //Declaracao de variaveis
     int n = 0;
     int k = 1;
     double pi = 0.0;
+    int validacao;
 
-    printf("Insira o numero de termos (minimo 20 e maximo 100):");
-    scanf("%d", &n);
+    //Leitura de valores e validacao dos valores
+
+    do{
+        validacao = 0;
+        printf("Insira o numero de termos (minimo 20 e maximo 100):");
+        scanf("%d", &n);
+
+        if(n < 20 || n > 100){
+            printf("Insira um numero entre 20 e 100 !!!");
+            validacao = 1;
+        }
+
+    }while(validacao);
+    
+    //Calculo do pi
 
     for (int i = 0; i < n; i++, k++)
     {
-        printf("k= %d\n", k);
-        printf("i= %d\n", i );
+
         if ( k % 2 == 1)
         {
             pi += 4.0*(1.0/((2.0*k)-1.0));
@@ -30,8 +43,11 @@ int main()
         {
             pi += 4.0*(-1.0/((2.0*k)-1.0));
         }
-        printf("pi= %lf\n", pi);
     }
+
+    //Apresentacao de resultados
+
     printf("Pi = %lf \n", pi);
+    
     return 0;
 }
