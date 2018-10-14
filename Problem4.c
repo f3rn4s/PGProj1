@@ -9,43 +9,56 @@ iguais”, ”Em ordem crescente”, ”Em ordem decrescente”, ”Em Ordem Arb
 
 int main()
 {
-	int num1, num2, temp;
-	printf("introduza o 1º numero: (letra para sair) ");
-	//scanf("%d", &num1);
-	if(scanf("%d", &num1) == 0) 
-		return 0;
-	temp = num1;
-	int alb = 0; //variavel de controlo para arbitrarios
-	int num = 0; //variavel de contagem dos numeros introduzidos
-	do// a partir do segundo começa a comparar 
+	int num, temp, ordem;//sequencia, temporario, definição da ordem
+	ordem = temp = 0; //para indicar a não utilização da ordem
+	int ciclo = 0; // para evitar a primeira comparação
+	printf("introduza a sua sequencia de numeros # # (letra para sair): ");
+		
+	
+	while(scanf("%d", &num)) // ciclo de scanf e comparação
 	{
-		printf("introduza outro numero: (letra para sair)");
-		
-		if(scanf("%d", &num2) == 0) 
+		if(temp<num && ciclo > 0)  // crescente
+			if(ordem != 1 && ordem != 0) // teste de continuidade da ordem
+				ordem = 4;//já houve outra ordem antes, portanto é arbitraria  
+			else
+				ordem = 1;// pertence apenas a ordem crescente
+		else if(temp>num && ciclo > 0) //decrescente
+			if(ordem != 2 && ordem != 0) 
+				ordem = 4;
+			else
+				ordem = 2;
+		else if(temp==num && ciclo > 0) //igualdade
+		{
+			if(ordem != 3 && ordem != 0) 
+				ordem = 4;
+			else
+				ordem = 3;
+		}	
+		temp = num;
+		ciclo++;		
+	}	
+	
+	
+	// para colocar o resultado
+	switch(ordem) 
+	{
+		case 0:
+			printf("Insira mais do que um numero sff");
 			break;
-		
-		num++;
-	
-		if(temp<num2)// crescente
-			alb += 2; //dobro dos numeros introduzidos
-		
-		if(temp>num2)//decrescente
-			alb += 3; //triplo dos numeros introduzidos
-		
-		if(temp==num2) //igualdade
-			alb += 5; //*quintuplo dos numeros introduzidos
-		
-	}while(1);	
-	
-	// colocar o resultado
-	if(alb == num*2) // igual ao dobro de num
-		printf("\nEm ordem crescente");
-	else if(alb == num*3) //será igual ao triplo de num
-		printf("\nEm ordem decrescente");
-	else if(alb == num*5) //será igual a 5x num
-		printf("\ntodos iguais");
-	else //se for outro valor, então ocorreu mais do k uma multiplicação
-		printf("\nEm ordem arbitraria");
-		
+		case 1:
+			printf("\nEm ordem crescente");
+			break;
+	    case 2:
+			printf("\nEm ordem decrescente");
+			break;
+		case 3:
+			printf("\ntodos iguais");
+			break;
+		case 4:
+			printf("\nEm ordem arbitraria");
+			break;
+		default:
+			printf("\nERRO: encontra-se entre a cadeira e o teclado");
+	}	
 	return 0;
 }
