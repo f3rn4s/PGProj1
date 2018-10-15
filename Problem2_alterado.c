@@ -30,7 +30,7 @@ int main()
 		printf("\n\t1 - Data de Nascimento");
 		printf("\n\t2 - Data presente dia");
 		printf("\n\t3 - Resultado (A,M,D)");
-		printf("\n\t  Escolha : ")
+		printf("\n\t  Escolha : ");
 		//Le a escolha do utilizador
 		scanf("%d",&escolha);
 		//Realiza o teste multipliplo 
@@ -41,12 +41,30 @@ int main()
 		case   0: //Abandonar aplicacao 
 		          break;
 		case   1: //Admitir data Nascimento
+				do
+				{
+					int validacao1 = 0;
 					printf("Ano da data de nascimento:\n");
 					scanf("%d",&anoNascimento);
 					printf("Mes da data de nascimento:\n");
 					scanf("%d",&mesNascimento);
 					printf("Dia da data de nascimento:\n");
-					scanf("%d",&diaNascimento);		
+					scanf("%d",&diaNascimento);
+					if( anoNascimento < 1900 || 
+					    anoNascimento > 2018 || 
+						anoCorrente   > 2018 || 
+						anoCorrente   < 1900)
+						 {
+					printf("ERRO!!! Insira os anos entre 1900 e 2018");
+					validacao1 = 1;
+					}
+					if( mesNascimento < 1  || 
+					    mesNascimento > 12 || 
+						mesCorrente   < 1  ||
+						 mesCorrente > 12) {
+					printf("ERRO!!! Insira os meses entre 1 e 12");
+					validacao1 = 1;
+				}while (validacao1)		
 		          break;
 		case   2: //Admitir a data actual
 					printf("Ano da data corrente:\n");
@@ -56,7 +74,7 @@ int main()
 					printf("Dia da data corrente:\n");
 					scanf("%d",&diaCorrente);		
 		          break;
-		case   3: //Calcular Anos meses dias
+		case   3: 
 					//Validação dos dados introduzidos
 
 					if( anoNascimento < 1900 || 
@@ -70,7 +88,16 @@ int main()
 						mesCorrente   < 1  ||
 						 mesCorrente > 12) {
 					printf("ERRO!!! Insira os meses entre 1 e 12");
-					}		
+					}
+					//Calcular Anos meses dias
+
+					int anodif = anoCorrente - anoNascimento;
+   					int mesdif = mesCorrente - mesNascimento;
+   					int diadif = diaCorrente - diaNascimento;
+
+   					printf("%s\n", );
+					
+
 		          break;  
 		default : // Outros valores diferenes dos anteriores
 		          break;		
