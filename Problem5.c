@@ -9,20 +9,23 @@ Nota: na resolução desta questão não pode usar funções da biblioteca de C*
 
 int main()
 {
-	//
-	int n=0;
-	double pi = 0.0;
-
-	for (int i = 0, int k = 1; i < n; i++, k++)
+	
+	int n, i;
+	double pi = 0, k;
+	
+	printf("insira o numero de iterações, entre 20 e 100: ");
+	scanf("%d", &n);
+	
+	for (i = 0, k = 1; i < n; i++, k++)// ciclo de iterações
 	{
-		if ( k % 2 == 1)
-		{
-			pi += (double)4*(1/((2*k)-1);
-		}
-		else(
-		{
-			pi += (double)4*(-1/((2*k)-1);
-		}
+		if(i % 2 == 0)
+			pi += (4/(2*k-1)); //k em vez de i para ser divisão de double
+		
+		else
+			pi += (-4/(2*k-1)); //impares é negativo
 	}
+	
+	printf("\n %f", pi); 
 	return 0;
 }
+ 
