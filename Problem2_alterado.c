@@ -18,6 +18,7 @@
 	int mesCorrente = 0;
 	int diaCorrente = 0;
     int escolha = 0;
+    int maxdsma = 0;
 
 
 //main Function
@@ -64,7 +65,27 @@ int main()
 						 mesCorrente > 12) {
 					printf("ERRO!!! Insira os meses entre 1 e 12");
 					validacao1 = 1;
-				}while (validacao1)		
+		
+					switch (mesNascimento) {
+			
+					case 1:
+					case 3:
+					case 5:
+					case 7:
+					case 8:
+					case 10:
+					case 12: maxdsma = 31; break;	
+					
+					case 4:
+					case 6:
+					case 9:
+					case 11: maxdsma = 30; break;	
+					
+					case 2:  maxdsma = 28+ ((anoNascimento %4 == 0 && (anoNascimento % 100 !=0 || anoNascimento % 400 == 0))? 1 : 0); break;
+					default: validacao1 = 1;
+							printf("ERRO!!! Insira os dias entre 1 e 28,29,30,31 consoante alguns casos.");
+							break;
+						}while (validacao1)		
 		          break;
 		case   2: //Admitir a data actual
 					printf("Ano da data corrente:\n");
@@ -106,3 +127,21 @@ int main()
 	   }while(escolha>0);//enquanto escolha for maior que zero
 	return 0;
 }//end main
+if (ma >= 1 && ma <= 12) {
+		
+		switch (ma) {
+			
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12: maxdsma = 31; break;	
+			
+			case 4:
+			case 6:
+			case 9:
+			case 11: maxdsma = 30; break;	
+			
+			case 2:  maxdsma = 28+ ((an %4 == 0 && (an % 100 !=0 || an % 400 == 0))? 1 : 0); break;
