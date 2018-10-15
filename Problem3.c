@@ -24,31 +24,45 @@ int main()
 
 	//Leitura de valores
 
-	printf("Insira a coordenada X do ponto P1:");
-	scanf("%d", &x1);
-	printf("Insira a coordenada Y do ponto P1:");
-	scanf("%d", &y1);
-	printf("Insira a coordenada X do ponto P2:");
-	scanf("%d", &x2);
-	printf("Insira a coordenada Y do ponto P2:");
-	scanf("%d", &y2);
-	printf("Insira a coordenada X do ponto P3:");
-	scanf("%d", &x3);
-	printf("Insira a coordenada Y do ponto P3:");
-	scanf("%d", &y3);
-	printf("Insira a coordenada X do ponto P4:");
-	scanf("%d", &x4);
-	printf("Insira a coordenada Y do ponto P4:");
-	scanf("%d", &y4);
+	
+	printf("Insira as coordenadas X e Y do ponto P1:");
+	scanf("%d%d", &x1,&y1);
+	printf("Insira as coordenadas X e Y do ponto P2:");
+	scanf("%d%d", &x2,&y2);
+	printf("Insira as coordenadas X e Y do ponto P3:");
+	scanf("%d%d", &x3,&y3);
+	printf("Insira as coordenadas X e Y do ponto P4:");
+	scanf("%d%d", &x4,&y4);
 
 	// Foi necessário dar cast numa das variáveis das coordenadas para permitir valores decimais
-	m_recta1 = ((float)y2-y1)/(x2-x1);
-	m_recta2 = ((float)y4-y3)/(x4-x3);
+	
+	int aux = x2-x1;
+	int aux2 = x4-x3;
 
+	if ( aux != 0 )
+	{				
+		m_recta1 = ((float)y2-y1)/(aux);
+	}
+	else 	// Para levantar inderterminacao 1/0 forca-se a variável a 0
+	{
+		m_recta1 = 0;
+	}	
+	if( aux2 != 0)
+	{
+		m_recta2 = ((float)y4-y3)/(aux2);
+	}
+	else	
+	{
+		m_recta2 = 0;
+	}
+
+	printf("m_recta2: %f\n", m_recta2 );
+	printf("m_recta1: %f\n", m_recta1 );
 
 	if((m_recta2 - m_recta1) == 0)
-
+	{
 		printf("Sao paralelas.");
+	}
 
 	else{
 
@@ -56,23 +70,30 @@ int main()
 		//b = y - m.x
 
 		float b_recta1 = (y1 - (m_recta1 * x1));
-		float b_recta2 = y3 - (m_recta2 * x3);
+		float b_recta2 = (y3 - (m_recta2 * x3));
 
+		 if (x1 == x2 && x3 == x4)
+		 {
+		 	printf("Sao paralelas.");
+		 }
 		//Calculo de pontos de interseção
 
 		/* Quando y = 0, a equação da recta para descobrir X é x = b/m, como queremos o ponto de interseção das duas rectas
 		subtrai-se as duas ordenadas na origem (b2-b1) e divide-se pela diferença dos seus declives*/ 
 
-		float pontoX = (b_recta2- b_recta1) / (m_recta1 - m_recta2);
+		 else
+		 {
+			float pontoX = (b_recta2- b_recta1) / (m_recta1 - m_recta2);
 
-		// substituição directa do X na equação da recta, qualquer uma delas serve
+			// substituição directa do X na equação da recta, qualquer uma delas serve
 
-		float pontoY = (m_recta1 * pontoX) + b_recta1;
+			float pontoY = (m_recta1 * pontoX) + b_recta1;
 
-		//float pontoY2 = m_recta2 * pontoX + b_recta2;
+			//float pontoY2 = m_recta2 * pontoX + b_recta2;
 
-		printf("Nao sao paralelas. O ponto de interseccao e:(%f) , (%f) \n", pontoX,pontoY );
-		//printf("Nao sao paralelas. O ponto de interseccao e:(%f) , (%f) \n", pontoX,pontoY2 );
+			printf("Nao sao paralelas. O ponto de interseccao e:(%f) , (%f) \n", pontoX,pontoY );
+			//printf("Nao sao paralelas. O ponto de interseccao e:(%f) , (%f) \n", pontoX,pontoY2 );
+		}
 	}
 
 

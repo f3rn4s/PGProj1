@@ -23,9 +23,9 @@ int main()
 	float pontoBY = 0;
 	float pontoCX = 0;
 	float pontoCY = 0;
-	float distanciaAB=0;
-	float distanciaAC=0;
-	float distanciaBC=0;
+	float distanciaAB = 0;
+	float distanciaAC = 0;
+	float distanciaBC = 0;
 	float perimetro = 0;
 
 	//Leitura de valores

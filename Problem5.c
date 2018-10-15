@@ -16,30 +16,31 @@ int main()
     double pi = 0.0;
     int validacao;
 
-    //Leitura de valores e validacao dos valores
+    //Leitura de valores e validacao dos valores introduzidos
 
-    do{
+    do {
         validacao = 0;
         printf("Insira o numero de termos (minimo 20 e maximo 100):");
         scanf("%d", &n);
 
-        if(n < 20 || n > 100){
+        if(n < 20 || n > 100)
+        {
             printf("Insira um numero entre 20 e 100 !!!");
             validacao = 1;
         }
 
-    }while(validacao);
+    } while (validacao);
     
     //Calculo do pi
 
     for (int i = 0; i < n; i++, k++)
     {
 
-        if ( k % 2 == 1)
+        if ( k % 2 == 1)    //potencias impares
         {
             pi += 4.0*(1.0/((2.0*k)-1.0));
         }
-        else
+        else    //potencias pares
         {
             pi += 4.0*(-1.0/((2.0*k)-1.0));
         }
