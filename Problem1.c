@@ -30,18 +30,12 @@ int main()
 
 	//Leitura de valores
 
-	printf("Insira a coordenada x do Ponto A:\n");
-	scanf("%f",&pontoAX);
-	printf("Insira a coordenada y do Ponto A:\n");
-	scanf("%f",&pontoAY);
-	printf("Insira a coordenada x do Ponto B:\n");
-	scanf("%f",&pontoBX);
-	printf("Insira a coordenada y do Ponto B:\n");
-	scanf("%f",&pontoBY);
-	printf("Insira a coordenada x do Ponto C:\n");
-	scanf("%f",&pontoCX);
-	printf("Insira a coordenada y do Ponto C:\n");
-	scanf("%f",&pontoCY);
+	printf("Insira as coordenadas X e Y do ponto A:");
+	scanf("%d%d", &pontoAX,&pontoAY);
+	printf("Insira as coordenadas X e Y do ponto B:");
+	scanf("%d%d", &pontoBX,&pontoBY);
+	printf("Insira as coordenadas X e Y do ponto C:");
+	scanf("%d%d", &pontoCX,&pontoCY);
 
 	//Cálculo das distâncias entre os pontos e perimetro
 
