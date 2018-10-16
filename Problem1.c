@@ -17,40 +17,61 @@ int main()
 {
 	//Declaração de variáveis
 
-	float pontoAX = 0;
-	float pontoAY = 0;
-	float pontoBX = 0;
-	float pontoBY = 0;
-	float pontoCX = 0;
-	float pontoCY = 0;
-	float distanciaAB = 0;
-	float distanciaAC = 0;
-	float distanciaBC = 0;
-	float perimetro = 0;
+	float pontoAX = 0.0;
+	float pontoAY = 0.0;
+	float pontoBX = 0.0;
+	float pontoBY = 0.0;
+	float pontoCX = 0.0;
+	float pontoCY = 0.0;
+	float distanciaAB = 0.0;
+	float distanciaAC = 0.0;
+	float distanciaBC = 0.0;
+	float perimetro = 0.0;
 
-	//Leitura de valores
+do {
+		
+		//Mostra o Menu
+		printf("\n\t0 - Abandonar aplicacao");
+		printf("\n\t1 - Admitir Coordenadas");
+		printf("\n\t2 - Mostar Perimetro");
+		printf("\n\t    Escolha :");
+		
+		//Admite a escolha
+		scanf("%d",&escolha);
+		
+		switch(escolha) {
+		case   0: //Abandonar 
+		    break;
+		case   1://admitir coordenadas
+			//Leitura de valores
 
-	printf("Insira as coordenadas X e Y do ponto A:");
-	scanf("%d%d", &pontoAX,&pontoAY);
-	printf("Insira as coordenadas X e Y do ponto B:");
-	scanf("%d%d", &pontoBX,&pontoBY);
-	printf("Insira as coordenadas X e Y do ponto C:");
-	scanf("%d%d", &pontoCX,&pontoCY);
+			printf("Insira as coordenadas X e Y do ponto A:");
+			scanf("%d%d", &pontoAX,&pontoAY);
+			printf("Insira as coordenadas X e Y do ponto B:");
+			scanf("%d%d", &pontoBX,&pontoBY);
+			printf("Insira as coordenadas X e Y do ponto C:");
+			scanf("%d%d", &pontoCX,&pontoCY);
+			break;
+		          
+		case   2://Mostar Perimetro
+			//Calculo das distAncias entre os pontos e perimetro
+			distanciaAB = sqrt(pow((pontoAX-pontoBX), 2) + pow((pontoAY-pontoBY), 2));
+			distanciaAC = sqrt(pow((pontoAX-pontoCX), 2) + pow((pontoAY-pontoCY), 2));
+			distanciaBC = sqrt(pow((pontoBX-pontoCX), 2) + pow((pontoBY-pontoCY), 2));
+			perimetro = distanciaAB + distanciaAC + distanciaBC;
 
-	//Cálculo das distâncias entre os pontos e perimetro
+			//Resultados
+			printf("Perimetro: %.2f\n",perimetro);
 
-
-	distanciaAB = sqrt(pow((pontoAX-pontoBX), 2) + pow((pontoAY-pontoBY), 2));
-
-	distanciaAC = sqrt(pow((pontoAX-pontoCX), 2) + pow((pontoAY-pontoCY), 2));
-
-	distanciaBC = sqrt(pow((pontoBX-pontoCX), 2) + pow((pontoBY-pontoCY), 2));
-
-	perimetro = distanciaAB + distanciaAC + distanciaBC;
-
-	//Resultados
-
-	printf("Perimetro: %.2f\n",perimetro);
-
-	return 0;
+			break;
+				  	
+		default : 
+			break;	
+			
+		}//switch
+		
+		
+     	}while(escolha>0);
+     	
+     	return 0;
 }
