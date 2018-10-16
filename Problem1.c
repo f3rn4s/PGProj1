@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 //Projecto Ex1
 /*O Sr Coimbra comprou um terreno triangular e pretende
  colocar uma cerca em torno no mesmo. O terreno está identificado
@@ -77,4 +75,3 @@ do {
      	
      	return 0;
 }
->>>>>>> a4d38b3e9230237a56f58768f9f1e35e33c2c95e

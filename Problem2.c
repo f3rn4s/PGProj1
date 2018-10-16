@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 //Projecto Ex2
 /*Faça um programa que apresenta a idade de alguém em termos de anos, meses e dias,
  dada a sua data de nascimento e a data corrente. As duas datas são lidas do standard
@@ -189,4 +187,3 @@ int main()
 	   }while(escolha>0);//enquanto escolha for maior que zero
 	return 0;
 }
->>>>>>> a4d38b3e9230237a56f58768f9f1e35e33c2c95e

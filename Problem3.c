@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 //Projecto Ex3
 /*Realize o programa que calcula se duas rectas sÃ£o ou nÃ£o paralelas, 
 apresentando no standard output (terminal) essa informaÃ§Ã£o. AlÃ©m disso,
@@ -118,4 +116,3 @@ int main()
 	   }while(escolha > 0 ); //enquanto escolha for maior que zero   
 	return 0;
 }//end main
->>>>>>> a4d38b3e9230237a56f58768f9f1e35e33c2c95e

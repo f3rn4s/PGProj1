@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 //Projecto Ex5
 /*Utilize a série apresentada abaixo na realização de um programa que calcula
  um aproximado de π, lendo para tal do standard input (teclado) o número n de 
@@ -54,4 +52,3 @@ int main()
     
     return 0;
 }
->>>>>>> a4d38b3e9230237a56f58768f9f1e35e33c2c95e

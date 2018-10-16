@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 //Projecto Ex4
 /* Elabore o programa que lê do standard input (teclado) uma sequência de dois ou mais inteiros
 que termina com um valor não numérico (uma qualquer letra), para calcular se todos os inteiros
@@ -65,4 +62,3 @@ int main()
     }   
     return 0;
 }
->>>>>>> a4d38b3e9230237a56f58768f9f1e35e33c2c95e
