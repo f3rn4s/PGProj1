@@ -56,38 +56,32 @@ int main()
 		
 		switch(escolha) {
 		case   0: //Abandonar 
-		          break;
+		    break;
 		case   1://admitir coordenadas
-				//Leitura de valores
+			//Leitura de valores
 
-				printf("Insira a coordenada x do Ponto A:\n");
-	            scanf("%f",&pontoAX);
-	            printf("Insira a coordenada y do Ponto A:\n");
-	            scanf("%f",&pontoAY);
-	            printf("Insira a coordenada x do Ponto B:\n");
-	            scanf("%f",&pontoBX);
-	            printf("Insira a coordenada y do Ponto B:\n");
-	            scanf("%f",&pontoBY);
-	            printf("Insira a coordenada x do Ponto C:\n");
-	            scanf("%f",&pontoCX);
-	            printf("Insira a coordenada y do Ponto C:\n");
-	            scanf("%f",&pontoCY);
-		
-		        break;
+			printf("Insira as coordenadas X e Y do ponto A:");
+			scanf("%d%d", &pontoAX,&pontoAY);
+			printf("Insira as coordenadas X e Y do ponto B:");
+			scanf("%d%d", &pontoBX,&pontoBY);
+			printf("Insira as coordenadas X e Y do ponto C:");
+			scanf("%d%d", &pontoCX,&pontoCY);
+			break;
 		          
 		case   2://Mostar Perimetro
-	            //Calculo das distAncias entre os pontos e perimetro
-	            distanciaAB = sqrt(pow((pontoAX-pontoBX), 2) + pow((pontoAY-pontoBY), 2));
-	            distanciaAC = sqrt(pow((pontoAX-pontoCX), 2) + pow((pontoAY-pontoCY), 2));
-	            distanciaBC = sqrt(pow((pontoBX-pontoCX), 2) + pow((pontoBY-pontoCY), 2));
-	            perimetro = distanciaAB + distanciaAC + distanciaBC;
+			//Calculo das distAncias entre os pontos e perimetro
+			distanciaAB = sqrt(pow((pontoAX-pontoBX), 2) + pow((pontoAY-pontoBY), 2));
+			distanciaAC = sqrt(pow((pontoAX-pontoCX), 2) + pow((pontoAY-pontoCY), 2));
+			distanciaBC = sqrt(pow((pontoBX-pontoCX), 2) + pow((pontoBY-pontoCY), 2));
+			perimetro = distanciaAB + distanciaAC + distanciaBC;
 
-	            //Resultados
-	            printf("Perimetro: %.2f\n",perimetro);
-		
-		        break;
+			//Resultados
+			printf("Perimetro: %.2f\n",perimetro);
+
+			break;
 				  	
-		default : break;	
+		default : 
+			break;	
 			
 		}//switch
 		
