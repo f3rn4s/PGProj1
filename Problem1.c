@@ -1,14 +1,24 @@
-//Projecto Ex1
-/*O Sr Coimbra comprou um terreno triangular e pretende
- colocar uma cerca em torno no mesmo. O terreno está identificado
- por três pontos cartesianos (2D). Pretende-se que ajude o 
- Sr. Coimbra a determinar quantos metros de rede serão necessários
- para vedar o terreno. Elabore o programa que lê do standard input
- (teclado) 6 valores reais que representam três pontos,
-  respetivamente (x1,y1), (x2,y2) e (x3,y3), e determina o
-   perímetro do triângulo, escrevendo esse valor no 
-   standard output (terminal). Pretende-se que o perímetro
-    seja apresentado arredondado a duas casas decimais.*/
+/*
+Programação 1
+
+Grupo : K
+Numero   Nome
+         Samir Santo
+35164    Fernando Duarte
+10065    Luis Silva 
+
+Projecto 
+Ex1
+O Sr Coimbra comprou um terreno triangular e pretende
+colocar uma cerca em torno no mesmo. O terreno está identificado
+por três pontos cartesianos (2D). Pretende-se que ajude o 
+Sr. Coimbra a determinar quantos metros de rede serão necessários
+para vedar o terreno. Elabore o programa que lê do standard input
+(teclado) 6 valores reais que representam três pontos,
+respetivamente (x1,y1), (x2,y2) e (x3,y3), e determina o
+perímetro do triângulo, escrevendo esse valor no 
+standard output (terminal). Pretende-se que o perímetro
+seja apresentado arredondado a duas casas decimais.*/
 
 #include <stdio.h>
 #include <math.h>
@@ -27,15 +37,22 @@ int main()
 	float distanciaAC = 0.0;
 	float distanciaBC = 0.0;
 	float perimetro = 0.0;
+	int escolha;
 
 do {
 		
 		//Mostra o Menu
-		printf("\n\t0 - Abandonar aplicacao");
-		printf("\n\t1 - Admitir Coordenadas");
-		printf("\n\t2 - Mostar Perimetro");
-		printf("\n\t    Escolha :");
-		
+		printf("\n\t+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+");
+		printf("\n\t|            Menu              |");	
+		printf("\n\t+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+");	
+		printf("\n\t|                              |");					
+		printf("\n\t|  0 - Abandonar Aplicacao     |");
+		printf("\n\t|  1 - Admitir Coordenadas     |");
+		printf("\n\t|  2 - Mostar Perimetro        |");
+		printf("\n\t|                              |");			
+		printf("\n\t+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+");		
+		printf("\n\t          Escolha : ");
+	
 		//Admite a escolha
 		scanf("%d",&escolha);
 		
@@ -46,11 +63,11 @@ do {
 			//Leitura de valores
 
 			printf("Insira as coordenadas X e Y do ponto A:");
-			scanf("%d%d", &pontoAX,&pontoAY);
+			scanf("%f%f", &pontoAX,&pontoAY);
 			printf("Insira as coordenadas X e Y do ponto B:");
-			scanf("%d%d", &pontoBX,&pontoBY);
+			scanf("%f%f", &pontoBX,&pontoBY);
 			printf("Insira as coordenadas X e Y do ponto C:");
-			scanf("%d%d", &pontoCX,&pontoCY);
+			scanf("%f%f", &pontoCX,&pontoCY);
 			break;
 		          
 		case   2://Mostar Perimetro
